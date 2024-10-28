@@ -146,7 +146,12 @@ class ExplicitCleanUp(pyblish.api.ContextPlugin):
         # Remove empty directies
         for dirpath in to_delete_dirpaths:
             if os.path.exists(dirpath):
-                shutil.rmtree(dirpath)
+                # 1 start mnm
+                try:
+                    shutil.rmtree(dirpath)
+                except Exception as error:
+                    print(error)
+                # 1 end mnm
 
         if to_delete_dirpaths:
             self.log.debug(
