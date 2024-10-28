@@ -1,0 +1,94 @@
+name: Bug Report
+description: File a bug report
+title: Your issue title here
+labels:
+  - 'type: bug'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: >-
+        Please search to see if an issue already exists for the bug you
+        encountered.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    attributes:
+      label: 'Current Behavior:'
+      description: A concise description of what you're experiencing.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 'Expected Behavior:'
+      description: A concise description of what you expected to happen.
+    validations:
+      required: false
+  - type: dropdown
+    id: _version
+    attributes:
+      label: Version
+      description: What version are you running? Look to AYON Tray
+      options:
+        - 1.0.0
+        - 0.4.4
+        - 0.4.3
+        - 0.4.2
+        - 0.4.1
+        - 0.4.0
+        - 0.3.2
+        - 0.3.1
+        - 0.3.0
+        - 0.2.1
+        - 0.2.0
+    validations:
+      required: true
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: What platform you are running on?
+      description: |
+        Please specify the operating systems you are using.
+      multiple: true
+      options:
+        - Windows
+        - Linux / Centos
+        - Linux / Ubuntu
+        - Linux / RedHat
+        - MacOS
+  - type: textarea
+    id: to-reproduce
+    attributes:
+      label: 'Steps To Reproduce:'
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. How did the configuration look like
+        2. What type of action was made
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Are there any labels you wish to add?
+      description: Please search labels and identify those related to your bug.
+      options:
+        - label: I have added the relevant labels to the bug report.
+          required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 'Relevant log output:'
+      description: >-
+        Please copy and paste any relevant log output. This will be
+        automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 'Additional context:'
+      description: Add any other context about the problem here.
